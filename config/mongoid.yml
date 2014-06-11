@@ -1,0 +1,31 @@
+development:
+    sessions:
+        default:
+            database: hv_database
+            hosts:
+                - 54.213.43.159:27017
+            options:
+            # database: nethub
+            # hosts:
+            # - ec2-184-72-143-203.compute-1.amazonaws.com:27017
+            # username: adminNethub
+            # password: "N3thub$dm1nP455w0rd/&)("
+production:
+    sessions:
+        default:
+            default:
+            database: hv_database
+            hosts:
+                - 54.213.43.159:27017          
+test:
+  sessions:
+    default:
+      database: auth_test
+      hosts:
+        - localhost:27017
+      options:
+        consistency: :strong
+        # In the test environment we lower the retries and retry interval to
+        # low amounts for fast failures.
+        max_retries: 1
+        retry_interval: 0

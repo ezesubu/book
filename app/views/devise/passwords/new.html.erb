@@ -1,0 +1,33 @@
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+   <header id="header" class="navbar navbar-fixed-top bg-primary dk"  data-spy="affix" data-offset-top="1">
+    <div class="container">
+      <div class="navbar-header">        
+        <a href="index.html" class="navbar-brand m-r-lg"><span class="text-lt">BookMyMatch.co</span></a>
+        </button>
+      </div>
+    </div>
+  </header>
+  <section id="content" class="m-t-lg wrapper-md animated fadeInDown">
+    <div class="container aside-xl">
+      <section class="m-b-lg">
+        <header class="wrapper text-center">
+          <strong>Reset your password <br>Type your email. You will receive an email shortly with instructions..</strong>
+        </header>
+        <form action="index.html">
+          <div class="list-group">
+            <div class="list-group-item">
+            	<%= f.text_field :email, :class => "form-control no-border", :placeholder => "Email" %>
+            </div>
+          </div>
+          <%= f.submit "Reset Password", :class => "btn btn-lg btn-primary btn-block" %>
+          <div class="line line-dashed"></div>
+          <p class="text-muted text-center"><small>Do you remember your password?</small></p>
+		  <%= link_to "Sign in", new_session_path(resource_name),:class => "btn btn-lg btn-default btn-block" %>
+        </form>
+      </section>
+    </div>
+  </section>
+<% end %>
+

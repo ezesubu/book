@@ -1,0 +1,10 @@
+
+.intro-login {
+	background: url(../images/intro/bg_login.jpg) #ed5b25 center top no-repeat;
+	background-size: cover !important;	
+}
+.intro > div{
+	padding: 15% 0;
+	background-color: #ed5b25;
+	background-color: rgba(0, 0, 0, 0.8);
+}
