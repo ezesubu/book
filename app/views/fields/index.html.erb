@@ -1,0 +1,33 @@
+<h1>Listing fields</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Picture</th>
+    <th>Reservation unit</th>
+    <th>Teams capacity</th>
+    <th>People capacity</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fields.each do |field| %>
+  <tr>
+    <td><%= field.name %></td>
+    <td><%= field.description %></td>
+    <td><%= image_tag(field.picture, :class => 'the_new_company') %></td>
+    <td><%= field.reservation_unit %></td>
+    <td><%= field.teams_capacity %></td>
+    <td><%= field.people_capacity %></td>
+    <td><%= link_to 'Show', field %></td>
+    <td><%= link_to 'Edit', edit_field_path(field) %></td>
+    <td><%= link_to 'Destroy', field, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Field', new_field_path %>

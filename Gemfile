@@ -16,3 +16,10 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
 gem 'omniauth-github'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+group :development do
+    gem 'pry'
+    gem 'pry-remote'
+    gem 'pry-stack_explorer'
+    gem 'pry-debugger'
+end

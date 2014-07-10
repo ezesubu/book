@@ -2,8 +2,11 @@
 
 <% if can? :manage, @users %>
   <p>Hello, you are an Admin</p>
+	  <%= render partial: "Dashboard/menu.html" %>
   <h2>Users</h2>
+  <% for user in @users %>
     <p><%= user.name %> <%= user.email %> <%= link_to "Edit User", edit_user_path(user) %> <%= link_to "Delete User", user, :confirm => "Are you sure?", :method => :delete %>
+  <% end %>
 <% else %>
   <p>Hello, you are not an Admin</p>
 <% end %>

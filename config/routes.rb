@@ -1,4 +1,15 @@
 DeviseRolesUserManagement::Application.routes.draw do
+  
+  resources :fields
+
+
+  resources :venues
+
+
+  resources :companies
+
+
+  resources :companies
   #devise_for :users, :controllers => {:registrations => "registrations"} 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_scope :user do

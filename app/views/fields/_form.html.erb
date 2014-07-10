@@ -1,0 +1,44 @@
+<%= form_for(@field) do |f| %>
+  <% if @field.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@field.errors.count, "error") %> prohibited this field from being saved:</h2>
+
+      <ul>
+      <% @field.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="field">
+    <%= f.label :venue %><br />
+    <%= f.select :venue ,  Venue.all.collect {|p| [ p.name, p.id ] } %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :picture %><br />
+    <%= f.file_field :picture %>
+  </div>
+  <div class="field">
+    <%= f.label :reservation_unit %><br />
+    <%= f.text_field :reservation_unit %>
+  </div>
+  <div class="field">
+    <%= f.label :teams_capacity %><br />
+    <%= f.text_field :teams_capacity %>
+  </div>
+  <div class="field">
+    <%= f.label :people_capacity %><br />
+    <%= f.text_field :people_capacity %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

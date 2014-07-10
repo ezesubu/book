@@ -1,0 +1,49 @@
+<h1>Listing companies</h1>
+
+<table>
+  <tr>
+    <th>Contact name</th>
+    <th>Phone</th>
+    <th>Address</th>
+    <th>Address2</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Country</th>
+    <th>Website</th>
+    <th>Email</th>
+    <th>Bank</th>
+    <th>Account type</th>
+    <th>Account number</th>
+    <th>Plan description</th>
+    <th>Agreement conditions</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @companies.each do |company| %>
+  <tr>
+    <td><%= company.contact_name %></td>
+    <td><%= company.phone %></td>
+    <td><%= company.address %></td>
+    <td><%= company.address2 %></td>
+    <td><%= company.city %></td>
+    <td><%= company.State %></td>
+    <td><%= company.country %></td>
+    <td><%= company.website %></td>
+    <td><%= company.email %></td>
+    <td><%= company.bank %></td>
+    <td><%= company.account_type %></td>
+    <td><%= company.account_number %></td>
+    <td><%= company.Plan_description %></td>
+    <td><%= company.Agreement_conditions %></td>
+    <td><%= link_to 'Show', company %></td>
+    <td><%= link_to 'Edit', edit_company_path(company) %></td>
+    <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Company', new_company_path %>

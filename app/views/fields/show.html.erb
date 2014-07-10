@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <b>Name:</b>
+  <%= @field.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @field.description %>
+</p>
+
+<p>
+  <b>Picture:</b>
+  <%= image_tag(@field.picture, :class => 'the_new_company') %>
+</p>
+
+<p>
+  <b>Reservation unit:</b>
+  <%= @field.reservation_unit %>
+</p>
+
+<p>
+  <b>Teams capacity:</b>
+  <%= @field.teams_capacity %>
+</p>
+
+<p>
+  <b>People capacity:</b>
+  <%= @field.people_capacity %>
+</p>
+
+
+<%= link_to 'Edit', edit_field_path(@field) %> |
+<%= link_to 'Back', fields_path %>

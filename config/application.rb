@@ -46,7 +46,7 @@ module DeviseRolesUserManagement
 
     # Added to account for error in configuration
     config.generators do |g|
-    g.orm :active_record
+    # g.orm :active_record
     end 
 
 

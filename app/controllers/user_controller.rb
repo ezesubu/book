@@ -11,7 +11,9 @@ class UserController < ApplicationController
   end
   
   def create
+
     @user = User.new(params[:user])
+    @user.rol = "admin";
     if @user.save
       flash[:notice] = "Successfully created User." 
       redirect_to root_path

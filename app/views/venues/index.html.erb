@@ -1,0 +1,49 @@
+<h1>Listing venues</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>About</th>
+    <th>Site</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Address1</th>
+    <th>Addres2</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Country</th>
+    <th>Geopos</th>
+    <th>Facebook</th>
+    <th>Twitter</th>
+    <th>Instagram</th>
+    <th>Youtube</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @venues.each do |venue| %>
+  <tr>
+    <td><%= venue.name %></td>
+    <td><%= venue.about %></td>
+    <td><%= venue.site %></td>
+    <td><%= venue.email %></td>
+    <td><%= venue.phone %></td>
+    <td><%= venue.address1 %></td>
+    <td><%= venue.addres2 %></td>
+    <td><%= venue.city %></td>
+    <td><%= venue.state %></td>
+    <td><%= venue.country %></td>
+    <td><%= venue.geopos %></td>
+    <td><%= venue.facebook %></td>
+    <td><%= venue.twitter %></td>
+    <td><%= venue.instagram %></td>
+    <td><%= venue.youtube %></td>
+    <td><%= link_to 'Show', venue %></td>
+    <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
+    <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'New Venue', new_venue_path %>
