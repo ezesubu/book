@@ -26099,3 +26099,68 @@ Processing by FieldsController#index as HTML
   MOPED: 54.191.28.113:27017 QUERY        database=booking_dev collection=fields selector={} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (226.0129ms)
   Rendered fields/index.html.erb within layouts/devise/sessions (233.0ms)
 Completed 200 OK in 252.0ms (Views: 251.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-10 16:40:24 -0500
+Processing by DashboardController#index as HTML
+Completed 401 Unauthorized in 5.9ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-07-10 16:40:25 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/devise/sessions (5.5ms)
+Completed 200 OK in 55.0ms (Views: 53.8ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-07-10 16:40:37 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4yJlgVIEXsopSMwylbzaQNzXk9rofGaNfqRWNIqFhH0=", "user"=>{"email"=>"andres.cala@nethub.co", "password"=>"[FILTERED]"}}
+  MOPED: 54.191.28.113:27017 COMMAND      database=admin command={:ismaster=>1} (334.6879ms)
+  MOPED: 54.191.28.113:27017 QUERY        database=booking_dev collection=users selector={"$query"=>{"email"=>"andres.cala@nethub.co"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (163.1470ms)
+  MOPED: 54.191.28.113:27017 UPDATE       database=booking_dev collection=users selector={"_id"=>"53bef5e6377772a79b000001"} update={"$set"=>{"last_sign_in_at"=>2014-07-10 20:24:05 UTC, "current_sign_in_at"=>2014-07-10 21:40:37 UTC, "sign_in_count"=>4}} flags=[] (0.2151ms)
+Redirected to http://localhost:3000/
+Completed 302 Found in 601.9ms
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-10 16:40:37 -0500
+Processing by DashboardController#index as HTML
+  MOPED: 54.191.28.113:27017 QUERY        database=booking_dev collection=users selector={"$query"=>{"_id"=>"53bef5e6377772a79b000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (164.3281ms)
+DEPRECATION WARNING: Passing the format in the template name is deprecated. Please pass render with :formats => [:html] instead. (called from _app_views_dashboard_index_html_erb__3327708689619503099_70233217942760 at /Applications/MAMP/htdocs/book/app/views/dashboard/index.html.erb:5)
+  Rendered Dashboard/_menu.html.erb (0.6ms)
+  MOPED: 54.191.28.113:27017 QUERY        database=booking_dev collection=users selector={"_id"=>{"$ne"=>"53bef5e6377772a79b000001"}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (164.8538ms)
+  Rendered dashboard/index.html.erb within layouts/devise/sessions (178.3ms)
+Completed 200 OK in 353.9ms (Views: 187.9ms)
+
+
+Started GET "/user/53b475e76702784911000001/edit" for 127.0.0.1 at 2014-07-10 17:57:40 -0500
+Processing by UserController#edit as HTML
+  Parameters: {"id"=>"53b475e76702784911000001"}
+  MOPED: 54.191.28.113:27017 COMMAND      database=admin command={:ismaster=>1} (340.0440ms)
+  MOPED: 54.191.28.113:27017 QUERY        database=booking_dev collection=users selector={"_id"=>"53b475e76702784911000001"} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (161.8848ms)
+  MOPED: 54.191.28.113:27017 QUERY        database=booking_dev collection=users selector={"$query"=>{"_id"=>"53bef5e6377772a79b000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (159.6920ms)
+  MOPED: 54.191.28.113:27017 QUERY        database=booking_dev collection=users selector={"_id"=>"53b475e76702784911000001"} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (164.0699ms)
+  Rendered user/_form.html.erb (5.6ms)
+  Rendered user/edit.html.erb within layouts/devise/sessions (11.8ms)
+Completed 200 OK in 871.4ms (Views: 30.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-16 12:41:04 -0500
+Processing by DashboardController#index as HTML
+  MOPED: 54.191.28.113:27017 COMMAND      database=admin command={:ismaster=>1} (369.7631ms)
+  MOPED: 54.191.28.113:27017 QUERY        database=booking_dev collection=users selector={"$query"=>{"_id"=>"53bef5e6377772a79b000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (159.3008ms)
+DEPRECATION WARNING: Passing the format in the template name is deprecated. Please pass render with :formats => [:html] instead. (called from _app_views_dashboard_index_html_erb___2429798993001269158_70288159940320 at /Applications/MAMP/htdocs/book/app/views/dashboard/index.html.erb:5)
+  Rendered Dashboard/_menu.html.erb (0.5ms)
+  MOPED: 54.191.28.113:27017 QUERY        database=booking_dev collection=users selector={"_id"=>{"$ne"=>"53bef5e6377772a79b000001"}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (163.8060ms)
+  Rendered dashboard/index.html.erb within layouts/devise/sessions (186.3ms)
+Completed 200 OK in 756.4ms (Views: 217.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-16 12:41:48 -0500
+Processing by DashboardController#index as HTML
+  MOPED: 54.191.28.113:27017 COMMAND      database=admin command={:ismaster=>1} (330.7147ms)
+  MOPED: 54.191.28.113:27017 QUERY        database=booking_dev collection=users selector={"$query"=>{"_id"=>"53bef5e6377772a79b000001"}, "$orderby"=>{:_id=>1}} flags=[:slave_ok] limit=-1 skip=0 batch_size=nil fields=nil (169.2100ms)
+DEPRECATION WARNING: Passing the format in the template name is deprecated. Please pass render with :formats => [:html] instead. (called from _app_views_dashboard_index_html_erb___2429798993001269158_70288159940320 at /Applications/MAMP/htdocs/book/app/views/dashboard/index.html.erb:5)
+  Rendered Dashboard/_menu.html.erb (0.0ms)
+  MOPED: 54.191.28.113:27017 QUERY        database=booking_dev collection=users selector={"_id"=>{"$ne"=>"53bef5e6377772a79b000001"}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (178.6451ms)
+  Rendered dashboard/index.html.erb within layouts/devise/sessions (182.4ms)
+Completed 200 OK in 700.0ms (Views: 198.3ms)
