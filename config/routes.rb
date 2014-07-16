@@ -1,5 +1,15 @@
 DeviseRolesUserManagement::Application.routes.draw do
   
+
+  #match ':controller(/:action(/:id))'
+  resources :views do
+      collection do
+          get 'cala'
+          #get 'puede agregar la que quiera así'
+      end
+
+  end
+
   resources :fields
 
 
