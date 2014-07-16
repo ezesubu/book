@@ -26164,3 +26164,23 @@ DEPRECATION WARNING: Passing the format in the template name is deprecated. Plea
   MOPED: 54.191.28.113:27017 QUERY        database=booking_dev collection=users selector={"_id"=>{"$ne"=>"53bef5e6377772a79b000001"}} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (178.6451ms)
   Rendered dashboard/index.html.erb within layouts/devise/sessions (182.4ms)
 Completed 200 OK in 700.0ms (Views: 198.3ms)
+
+
+Started GET "/views" for 127.0.0.1 at 2014-07-16 11:05:15 -0700
+Processing by ViewsController#index as HTML
+  MOPED: 54.191.28.113:27017 COMMAND      database=admin command={:ismaster=>1} (933.8491ms)
+  MOPED: 54.191.28.113:27017 QUERY        database=booking_dev collection=views selector={} flags=[:slave_ok] limit=0 skip=0 batch_size=nil fields=nil (125.0849ms)
+  Rendered views/index.html.erb within layouts/devise/sessions (1076.9ms)
+Completed 200 OK in 1311.1ms (Views: 1306.1ms)
+
+
+Started GET "/views/cala" for 127.0.0.1 at 2014-07-16 11:18:18 -0700
+Processing by ViewsController#cala as HTML
+  Rendered views/cala.html.erb within layouts/devise/sessions (0.5ms)
+Completed 200 OK in 97.6ms (Views: 97.1ms)
+
+
+Started GET "/views/cala" for 127.0.0.1 at 2014-07-16 11:18:36 -0700
+Processing by ViewsController#cala as HTML
+  Rendered views/cala.html.erb within layouts/devise/sessions (1.0ms)
+Completed 200 OK in 37.0ms (Views: 37.0ms)
